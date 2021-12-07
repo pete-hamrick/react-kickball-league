@@ -1,9 +1,4 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
-}
-
-/* .App-header {
+.App-header {
   height: 100px;
   display: flex;
   flex-direction: row;
@@ -37,4 +32,12 @@
 
 .Nav-link {
   margin: 15px;
-} */
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
