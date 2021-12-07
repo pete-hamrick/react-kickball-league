@@ -7,10 +7,13 @@ export default function TeamList() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getTeams()
-      .then(({ data }) => setTeams(data))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false))
+    async function getTheTeams() {
+      const data = await getTeams()
+      setTeams(data)
+      setLoading(false)
+    }
+
+    getTheTeams()
   }, [])
 
   if (loading) return <h1>Loading teams...</h1>
@@ -20,8 +23,9 @@ export default function TeamList() {
       <p>
         <Link to="/">Back to Homepage</Link>
       </p>
-      <ul className="team-list" aria-label="Team List"></ul>
-      {console.log(teams)}
+      <ul className="team-list" aria-label="Team List">
+        {console.log(teams)}
+      </ul>
     </section>
   )
 }
