@@ -24,6 +24,10 @@ export default function PlayerDetail() {
       </p>
       <h2>{player.name}</h2>
       <p>Position: {player.position}</p>
+      <p>
+        Team:{'  '}
+        <Link to={`/teams/${player.team_id}`}>{player.teams.name}</Link>
+      </p>
     </section>
   )
 }
