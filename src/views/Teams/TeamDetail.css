@@ -1,0 +1,15 @@
+.player-list {
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-list > li > a {
+  text-decoration: underline;
+  color: blue;
+}
+
+.player-list > li > a:visited {
+  color: blue;
+}

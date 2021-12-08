@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-// import Team from '../../components/Team/Team'
 import { getTeamById } from '../../services/teams'
+import './TeamDetail.css'
 
 export default function TeamDetail() {
   const { id } = useParams()
@@ -20,14 +20,14 @@ export default function TeamDetail() {
 
   return (
     <section>
-      <p>
+      <p className="link-back">
         <Link to="/teams">Back to Teams</Link>
       </p>
       <h2>{team.name}</h2>
       <p>
         From {team.city}, {team.state}
       </p>
-      <ul>
+      <ul className="player-list">
         {team.players.map((player) => {
           return (
             <li key={player.id}>
