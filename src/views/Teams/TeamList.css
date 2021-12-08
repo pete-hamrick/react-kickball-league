@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+}
+
+.link-back {
+  display: flex;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+.team-list {
+  color: blue;
+  font-weight: bold;
+}
+
+a {
+  color: blue;
+}
+
+a:visited {
+  color: inherit;
+}

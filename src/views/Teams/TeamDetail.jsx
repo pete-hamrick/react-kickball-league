@@ -32,7 +32,7 @@ export default function TeamDetail() {
           return (
             <li key={player.id}>
               {player.position} - {'  '}
-              <Link to={`/players/${team.players.id}`}>{player.name}</Link>
+              <Link to={`/players/${player.id}`}>{player.name}</Link>
             </li>
           )
         })}

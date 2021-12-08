@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getTeams } from '../../services/teams'
+import './TeamList.css'
 
 export default function TeamList() {
   const [teams, setTeams] = useState([])
@@ -19,8 +20,8 @@ export default function TeamList() {
   if (loading) return <h1>Loading teams...</h1>
 
   return (
-    <section>
-      <p>
+    <section className="team-container">
+      <p className="link-back">
         <Link to="/">Back to Homepage</Link>
       </p>
       <ul className="team-list" aria-label="Team List">
