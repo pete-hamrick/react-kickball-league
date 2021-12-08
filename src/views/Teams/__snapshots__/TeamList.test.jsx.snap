@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a list of the teams 1`] = `
+<div>
+  <h1>
+    Loading teams...
+  </h1>
+</div>
+`;

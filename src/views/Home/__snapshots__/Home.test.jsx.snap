@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a humble homepage 1`] = `
+<div>
+  <section>
+    <h2>
+      Welcome to the Kickball League Directory
+    </h2>
+    <img
+      alt="kickball logo"
+      src="kick.png"
+    />
+  </section>
+</div>
+`;
