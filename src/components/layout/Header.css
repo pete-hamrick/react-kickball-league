@@ -6,10 +6,12 @@
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
   background-image: linear-gradient(blue, lightblue 80%, green 99%);
+  box-shadow: 0px 5px 5px gray;
 }
 
 .App-link {
-  color: #61dafb;
+  color: gold;
+  font-weight: bold;
   list-style-type: none;
 }
 
