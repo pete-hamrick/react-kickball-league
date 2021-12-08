@@ -24,7 +24,11 @@ export default function TeamList() {
         <Link to="/">Back to Homepage</Link>
       </p>
       <ul className="team-list" aria-label="Team List">
-        {console.log(teams)}
+        {teams.map((team) => (
+          <li key={team.id}>
+            <Link to={`/teams/${team.id}`}>{team.name}</Link>
+          </li>
+        ))}
       </ul>
     </section>
   )
