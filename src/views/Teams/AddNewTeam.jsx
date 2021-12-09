@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import TeamForm from '../../components/Teams/TeamForm'
 import { createTeam } from '../../services/teams'
 import './AddNewTeam.css'
@@ -8,6 +9,7 @@ export default function AddNewTeam() {
   const [name, setName] = useState('')
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
+  const history = useHistory()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
