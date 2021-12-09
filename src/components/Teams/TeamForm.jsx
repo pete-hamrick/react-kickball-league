@@ -3,8 +3,6 @@ import React from 'react'
 export default function TeamForm() {
   return (
     <form>
-      <h1>Form is here!</h1>
-
       <label htmlFor="name">Name:</label>
       <input id="name" name="name" type="text" />
 
