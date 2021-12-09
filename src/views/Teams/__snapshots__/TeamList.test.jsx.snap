@@ -2,25 +2,29 @@
 
 exports[`should render a list of the teams 1`] = `
 <div>
-  <section>
-    <p>
+  <section
+    class="team-container"
+  >
+    <p
+      class="link-back"
+    >
       <a
         href="/"
       >
         Back to Homepage
       </a>
     </p>
+    <p>
+      <a
+        href="/teams/new"
+      >
+        Add a Team
+      </a>
+    </p>
     <ul
       aria-label="Team List"
       class="team-list"
     >
-      <li>
-        <a
-          href="/teams/10"
-        >
-          Acme USA
-        </a>
-      </li>
       <li>
         <a
           href="/teams/1"
@@ -32,28 +36,35 @@ exports[`should render a list of the teams 1`] = `
         <a
           href="/teams/3"
         >
-          Lakeville Thunderfeet
-        </a>
-      </li>
-      <li>
-        <a
-          href="/teams/4"
-        >
-          Mt. Hoodies
+          Eureka, I Found My Keys
         </a>
       </li>
       <li>
         <a
           href="/teams/2"
         >
-          Stumptown Lumberjacks
+          Seattle Garages
+        </a>
+      </li>
+      <li>
+        <a
+          href="/teams/4"
+        >
+          Yachats Red Hots
         </a>
       </li>
       <li>
         <a
           href="/teams/5"
         >
-          Vancougers
+          test name
+        </a>
+      </li>
+      <li>
+        <a
+          href="/teams/6"
+        >
+          test name
         </a>
       </li>
     </ul>

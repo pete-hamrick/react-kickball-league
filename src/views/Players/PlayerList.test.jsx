@@ -13,8 +13,8 @@ it('should render a list of the players', async () => {
 
   screen.getByText('Loading Players...')
 
-  const budPlayerName = await screen.findByText('Bud E. Guy', { exact: false })
+  const playerName = await screen.findByText('Johnny Baseball', { exact: false })
 
   expect(container).toMatchSnapshot()
-  expect(budPlayerName).toBeInTheDocument()
+  expect(playerName).toBeInTheDocument()
 })

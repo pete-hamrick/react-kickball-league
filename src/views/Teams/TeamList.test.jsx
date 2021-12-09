@@ -13,8 +13,8 @@ it('should render a list of the teams', async () => {
 
   screen.getByText('Loading teams...')
 
-  const acmeTeamName = await screen.findByText('Acme USA', { exact: false })
+  const teamName = await screen.findByText('Bridge City Sneakers', { exact: false })
 
   expect(container).toMatchSnapshot()
-  expect(acmeTeamName).toBeInTheDocument()
+  expect(teamName).toBeInTheDocument()
 })

@@ -46,7 +46,7 @@ it('should add a new team and then redirect to that team detail page', async () 
     </Router>
   )
 
-  screen.getByText('Add a Team')
+  screen.getByText('Add a Team', { exact: false })
 
   const nameField = screen.getByLabelText(/name/i)
   const cityField = screen.getByLabelText(/city/i)

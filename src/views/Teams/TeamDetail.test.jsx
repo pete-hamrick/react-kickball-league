@@ -13,9 +13,9 @@ it('should render the detailed view of a team', async () => {
 
   screen.getByText('Loading Team...')
 
-  const teamName = await screen.findByText('Lakeville Thunderfeet', { exact: false })
-  const cityName = await screen.findByText('Lake Oswego', { exact: false })
+  const teamName = await screen.findByText('Eureka, I Found My Keys', { exact: false })
+  const stateName = await screen.findByText('CA', { exact: false })
 
   expect(teamName).toBeInTheDocument()
-  expect(cityName).toBeInTheDocument()
+  expect(stateName).toBeInTheDocument()
 })
