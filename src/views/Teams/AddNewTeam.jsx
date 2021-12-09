@@ -15,6 +15,7 @@ export default function AddNewTeam() {
     e.preventDefault()
 
     const res = await createTeam({ name, city, state })
+    
     history.push(`/teams/${res[0].id}`)
   }
 

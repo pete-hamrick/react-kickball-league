@@ -5,18 +5,20 @@ import './TeamDetail.css'
 
 export default function TeamDetail() {
   const { id } = useParams()
-  const [team, setTeams] = useState(null)
+  const [team, setTeam] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function getTeam() {
       const teamData = await getTeamById(id)
-      setTeams(teamData)
+      setTeam(teamData)
+      setLoading(false)
     }
 
     getTeam()
   }, [id])
 
-  if (!team) return <h1>Loading Team...</h1>
+  if (loading) return <h1>Loading Team...</h1>
 
   return (
     <section>

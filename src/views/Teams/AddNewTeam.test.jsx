@@ -17,12 +17,18 @@ const mockedTeam = {
 }
 
 const server = setupServer(
-  rest.get('https://dlvgiudbzqwqzjqonrsg.supabase.co/rest/v1/teams', (req, res, ctx) => {
-    return res(ctx.json(mockedTeam))
-  }),
-  rest.post('https://dlvgiudbzqwqzjqonrsg.supabase.co/rest/v1/teams', (req, res, ctx) => {
-    return res(ctx.json([mockedTeam]))
-  })
+  rest.get(
+    'https://dlvgiudbzqwqzjqonrsg.supabase.co/rest/v1/teams',
+    (req, res, ctx) => {
+      return res(ctx.json(mockedTeam))
+    }
+  ),
+  rest.post(
+    'https://dlvgiudbzqwqzjqonrsg.supabase.co/rest/v1/teams',
+    (req, res, ctx) => {
+      return res(ctx.json([mockedTeam]))
+    }
+  )
 )
 
 beforeAll(() => {
@@ -59,5 +65,4 @@ it('should add a new team and then redirect to that team detail page', async () 
   userEvent.click(submitButton)
 
   await screen.findByText('test team')
-  screen.debug()
 })
