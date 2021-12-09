@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import TeamForm from '../../components/Teams/TeamForm'
-import { getTeamById } from '../../services/teams'
+import { getTeamById, updateTeamById } from '../../services/teams'
 
 export default function UpdateTeam() {
   const { id } = useParams()
@@ -23,13 +23,29 @@ export default function UpdateTeam() {
     getTeam()
   }, [id])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const res = await updateTeamById(id, { name, city, state })
+
+    history.push(`/teams/${res[0].id}`)
+  }
+
   if (loading) return <h1>Loading Team...</h1>
 
   return (
     <>
       <fieldset>
         <legend>Update Team</legend>
-        <TeamForm />
+        <TeamForm
+          name={name}
+          city={city}
+          state={state}
+          setName={setName}
+          setCity={setCity}
+          setState={setState}
+          handleSubmit={handleSubmit}
+        />
       </fieldset>
     </>
   )
