@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import TeamForm from '../../components/Teams/TeamForm'
+import { createTeam } from '../../services/teams'
 import './AddNewTeam.css'
 
 export default function AddNewTeam() {
@@ -17,7 +18,15 @@ export default function AddNewTeam() {
 
   return (
     <section className="new-team-container">
-      <TeamForm />
+      <TeamForm
+        name={name}
+        setName={setName}
+        city={city}
+        setCity={setCity}
+        state={state}
+        setState={setState}
+        handleSubmit={handleSubmit}
+      />
     </section>
   )
 }
