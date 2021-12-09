@@ -24,6 +24,9 @@ export default function TeamList() {
       <p className="link-back">
         <Link to="/">Back to Homepage</Link>
       </p>
+      <p>
+        <Link to="/teams/new">Add a Team</Link>
+      </p>
       <ul className="team-list" aria-label="Team List">
         {teams.map((team) => (
           <li key={team.id}>
