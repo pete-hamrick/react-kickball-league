@@ -20,15 +20,18 @@ export default function AddNewTeam() {
 
   return (
     <section className="new-team-container">
-      <TeamForm
-        name={name}
-        setName={setName}
-        city={city}
-        setCity={setCity}
-        state={state}
-        setState={setState}
-        handleSubmit={handleSubmit}
-      />
+      <fieldset>
+        <legend>Add A Team</legend>
+        <TeamForm
+          name={name}
+          setName={setName}
+          city={city}
+          setCity={setCity}
+          state={state}
+          setState={setState}
+          handleSubmit={handleSubmit}
+        />
+      </fieldset>
     </section>
   )
 }
