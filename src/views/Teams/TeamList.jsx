@@ -30,7 +30,10 @@ export default function TeamList() {
       <ul className="team-list" aria-label="Team List">
         {teams.map((team) => (
           <li key={team.id}>
-            <Link to={`/teams/${team.id}`}>{team.name}</Link>
+            <span>{team.name + ' '}</span>
+            <Link to={`/teams/${team.id}`}>View</Link>{' '}
+            <Link to={`/teams/update/${team.id}`}>Update</Link>{' '}
+            <Link to={`/teams/delete/${team.id}`}>Delete</Link>
           </li>
         ))}
       </ul>
