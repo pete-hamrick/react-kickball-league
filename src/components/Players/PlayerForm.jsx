@@ -29,17 +29,26 @@ export default function PlayerForm({
         onChange={({ target }) => setPosition(target.value)}
       />
 
-      <label htmlFor="team-select">Select a Team:</label>
-      <select id="team-select" onChange={({ target }) => setTeam(target.value)}>
-        <option key={0} value={0}>
-          -- Please Choose a Team --
-        </option>
-        {teams.map((team) => (
-          <option key={team.id} value={team.id}>
-            {team.name}
-          </option>
-        ))}
-      </select>
+      {teams ? (
+        <>
+          <label htmlFor="team-select">Select a Team:</label>
+          <select
+            id="team-select"
+            onChange={({ target }) => setTeam(target.value)}
+          >
+            <option key={0} value={0}>
+              -- Please Choose a Team --
+            </option>
+            {teams.map((team) => (
+              <option key={team.id} value={team.id}>
+                {team.name}
+              </option>
+            ))}
+          </select>
+        </>
+      ) : (
+        ''
+      )}
 
       <input type="submit" aria-label="Submit" />
     </form>
