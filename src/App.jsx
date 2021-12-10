@@ -9,6 +9,7 @@ import TeamList from './views/Teams/TeamList'
 import Home from './views/Home/Home'
 import AddNewTeam from './views/Teams/AddNewTeam'
 import UpdateTeam from './views/Teams/UpdateTeam'
+import AddNewPlayer from './views/Players/AddNewPlayer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/teams/new" component={AddNewTeam} />
           <Route path="/teams/:id" component={TeamDetail} />
           <Route path="/teams/" component={TeamList} />
+          <Route path="/players/new" component={AddNewPlayer} />
           <Route path="/players/:id" component={PlayerDetail} />
           <Route path="/players/" component={PlayerList} />
           <Route path="/" component={Home} />

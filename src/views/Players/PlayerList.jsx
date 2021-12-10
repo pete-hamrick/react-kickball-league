@@ -23,6 +23,7 @@ export default function PlayerList() {
     <section>
       <p>
         <Link to="/">Back to Homepage</Link>
+        <Link to="/players/new">Add New Player</Link>
       </p>
       <ul className="players-list" aria-label="Player List">
         {players.map((player) => (
