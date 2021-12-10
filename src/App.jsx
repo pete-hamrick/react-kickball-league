@@ -10,6 +10,7 @@ import Home from './views/Home/Home'
 import AddNewTeam from './views/Teams/AddNewTeam'
 import UpdateTeam from './views/Teams/UpdateTeam'
 import AddNewPlayer from './views/Players/AddNewPlayer'
+import UpdatePlayer from './views/Players/UpdatePlayer'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/teams/new" component={AddNewTeam} />
           <Route path="/teams/:id" component={TeamDetail} />
           <Route path="/teams/" component={TeamList} />
+          <Route path="/players/update/:id" component={UpdatePlayer} />
           <Route path="/players/new" component={AddNewPlayer} />
           <Route path="/players/:id" component={PlayerDetail} />
           <Route path="/players/" component={PlayerList} />

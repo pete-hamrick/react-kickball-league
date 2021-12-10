@@ -17,6 +17,9 @@ export default function PlayerList() {
     getAllPlayers()
   }, [])
 
+  //TODO write handleDelete
+  const handleDelete = async () => {}
+
   if (loading) return <h1>Loading Players...</h1>
 
   return (
@@ -28,7 +31,14 @@ export default function PlayerList() {
       <ul className="players-list" aria-label="Player List">
         {players.map((player) => (
           <li key={player.id}>
-            <Link to={`/players/${player.id}`}>{player.name}</Link>
+            {player.name}
+            <button>
+              <Link to={`/players/${player.id}`}>View</Link>
+            </button>
+            <button>
+              <Link to={`/players/update/${player.id}`}>Update</Link>
+            </button>
+            <button onClick={() => handleDelete(player)}>Delete</button>
           </li>
         ))}
       </ul>

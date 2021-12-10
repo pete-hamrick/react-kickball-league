@@ -6,12 +6,11 @@ export default function PlayerForm({
   position,
   setPosition,
   handleSubmit,
-  team,
   setTeam,
   teams,
 }) {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input
         id="name"
@@ -31,7 +30,7 @@ export default function PlayerForm({
       />
 
       <label htmlFor="team-select">Select a Team:</label>
-      <select id="team-select">
+      <select id="team-select" onChange={({ target }) => setTeam(target.value)}>
         <option key={0} value={0}>
           -- Please Choose a Team --
         </option>
@@ -41,6 +40,8 @@ export default function PlayerForm({
           </option>
         ))}
       </select>
+
+      <input type="submit" aria-label="Submit" />
     </form>
   )
 }
