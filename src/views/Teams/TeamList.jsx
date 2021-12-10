@@ -1,21 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getTeams } from '../../services/teams'
+import { deleteTeamById, getTeams } from '../../services/teams'
 import './TeamList.css'
 
 export default function TeamList() {
   const [teams, setTeams] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    async function getTheTeams() {
-      const data = await getTeams()
-      setTeams(data)
-      setLoading(false)
-    }
+  const loadTeams = async () => {
+    const data = await getTeams()
+    setTeams(data)
+    setLoading(false)
+  }
 
-    getTheTeams()
+  useEffect(() => {
+    loadTeams()
   }, [])
+
+  const handleDelete = async ({ id, name }) => {
+    const deleteConfirmation = confirm(
+      `Are you sure you want to delete ${name}`
+    )
+    if (deleteConfirmation) {
+      setLoading(true)
+      await deleteTeamById(id)
+      await loadTeams()
+    }
+  }
 
   if (loading) return <h1>Loading teams...</h1>
 
@@ -31,9 +42,13 @@ export default function TeamList() {
         {teams.map((team) => (
           <li key={team.id}>
             <span>{team.name + ' '}</span>
-            <Link to={`/teams/${team.id}`}>View</Link>{' '}
-            <Link to={`/teams/update/${team.id}`}>Update</Link>{' '}
-            <Link to={`/teams/delete/${team.id}`}>Delete</Link>
+            <button>
+              <Link to={`/teams/${team.id}`}>View</Link>{' '}
+            </button>
+            <button>
+              <Link to={`/teams/update/${team.id}`}>Update</Link>
+            </button>
+            <button onClick={() => handleDelete(team)}>Delete</button>
           </li>
         ))}
       </ul>

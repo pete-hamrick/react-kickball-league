@@ -1,6 +1,14 @@
 import React from 'react'
 
-export default function TeamForm({ name, city, state, setName, setCity, setState, handleSubmit }) {
+export default function TeamForm({
+  name,
+  city,
+  state,
+  setName,
+  setCity,
+  setState,
+  handleSubmit,
+}) {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
@@ -30,7 +38,7 @@ export default function TeamForm({ name, city, state, setName, setCity, setState
         onChange={({ target }) => setState(target.value)}
       />
 
-      <input type="submit" aria-label="Add A Team" />
+      <input type="submit" aria-label="Submit" />
     </form>
   )
 }
