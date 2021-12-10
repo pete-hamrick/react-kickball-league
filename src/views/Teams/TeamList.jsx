@@ -19,7 +19,7 @@ export default function TeamList() {
 
   const handleDelete = async ({ id, name }) => {
     const deleteConfirmation = confirm(
-      `Are you sure you want to delete ${name}`
+      `Are you sure you want to delete ${name}?`
     )
     if (deleteConfirmation) {
       setLoading(true)
